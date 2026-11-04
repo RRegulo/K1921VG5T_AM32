@@ -1,0 +1,107 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug K1921VG5T (J-Link)",
+      "cwd": "${workspaceFolder}",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "executable": "${workspaceFolder}/build-debug/K1921VG5T_AM32",
+      "serverpath": "${env:OPENOCD_NIIET}/bin/openocd.exe",
+      "gdbPath": "riscv-none-elf-gdb",
+      "toolchainPrefix": "riscv-none-elf",
+      "device": "K1921VG5T",
+      "svdFile": "${workspaceFolder}/platform/Device/K1921VG5T/K1921VG5T.svd",
+      "openOCDPreConfigLaunchCommands": [
+        "transport select jtag"
+      ],
+      "configFiles": [
+        "interface/jlink.cfg",
+        "target/k1921vg5t.cfg",
+        "${workspaceFolder}/openocd/k1921vg5t-workarea.cfg"
+      ],
+      "searchDir": [
+        "${env:OPENOCD_NIIET}/share/openocd/scripts"
+      ],
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "raw"
+    },
+    {
+      "name": "Attach K1921VG5T (J-Link)",
+      "cwd": "${workspaceFolder}",
+      "type": "cortex-debug",
+      "request": "attach",
+      "servertype": "openocd",
+      "executable": "${workspaceFolder}/build-debug/K1921VG5T_AM32",
+      "serverpath": "${env:OPENOCD_NIIET}/bin/openocd.exe",
+      "gdbPath": "riscv-none-elf-gdb",
+      "toolchainPrefix": "riscv-none-elf",
+      "device": "K1921VG5T",
+      "svdFile": "${workspaceFolder}/platform/Device/K1921VG5T/K1921VG5T.svd",
+      "openOCDPreConfigLaunchCommands": [
+        "transport select jtag"
+      ],
+      "configFiles": [
+        "interface/jlink.cfg",
+        "target/k1921vg5t.cfg",
+        "${workspaceFolder}/openocd/k1921vg5t-workarea.cfg"
+      ],
+      "searchDir": [
+        "${env:OPENOCD_NIIET}/share/openocd/scripts"
+      ],
+      "showDevDebugOutput": "raw"
+    },
+    {
+      "name": "Debug K1921VG5T (Dev Container)",
+      "cwd": "${workspaceFolder}",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "executable": "${workspaceFolder}/build-debug/K1921VG5T_AM32",
+      "serverpath": "/opt/openocd-niiet/bin/openocd",
+      "gdbPath": "/opt/riscv-none-elf/bin/riscv-none-elf-gdb",
+      "toolchainPrefix": "riscv-none-elf",
+      "device": "K1921VG5T",
+      "svdFile": "${workspaceFolder}/platform/Device/K1921VG5T/K1921VG5T.svd",
+      "openOCDPreConfigLaunchCommands": [
+        "transport select jtag"
+      ],
+      "configFiles": [
+        "interface/jlink.cfg",
+        "target/k1921vg5t.cfg",
+        "${workspaceFolder}/openocd/k1921vg5t-workarea.cfg"
+      ],
+      "searchDir": [
+        "/opt/openocd-niiet/share/openocd/scripts"
+      ],
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "raw"
+    },
+    {
+      "name": "Attach K1921VG5T (Dev Container)",
+      "cwd": "${workspaceFolder}",
+      "type": "cortex-debug",
+      "request": "attach",
+      "servertype": "openocd",
+      "executable": "${workspaceFolder}/build-debug/K1921VG5T_AM32",
+      "serverpath": "/opt/openocd-niiet/bin/openocd",
+      "gdbPath": "/opt/riscv-none-elf/bin/riscv-none-elf-gdb",
+      "toolchainPrefix": "riscv-none-elf",
+      "device": "K1921VG5T",
+      "svdFile": "${workspaceFolder}/platform/Device/K1921VG5T/K1921VG5T.svd",
+      "openOCDPreConfigLaunchCommands": [
+        "transport select jtag"
+      ],
+      "configFiles": [
+        "interface/jlink.cfg",
+        "target/k1921vg5t.cfg",
+        "${workspaceFolder}/openocd/k1921vg5t-workarea.cfg"
+      ],
+      "searchDir": [
+        "/opt/openocd-niiet/share/openocd/scripts"
+      ],
+      "showDevDebugOutput": "raw"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "K1921VG5T AM32",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "runArgs": [
+    "--privileged"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "marus25.cortex-debug",
+        "zixuanwang.linkerscript"
+      ],
+      "settings": {
+        "cmake.configureOnOpen": true,
+        "cmake.generator": "Ninja",
+        "cmake.configureSettings": {
+          "CMAKE_TOOLCHAIN_FILE": "${containerWorkspaceFolder}/cmake/riscv-none-elf.cmake",
+          "USE_BOOTLOADER": "OFF"
+        },
+        "editor.formatOnSave": true,
+        "files.associations": {
+          "*.ld": "linkerscript"
+        }
+      }
+    }
+  }
+}

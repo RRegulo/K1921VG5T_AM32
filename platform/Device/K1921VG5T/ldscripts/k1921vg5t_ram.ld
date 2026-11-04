@@ -1,0 +1,24 @@
+/** @file
+*  @brief Bare metal linker script
+          for K1921VG5T (Flash)
+*/
+
+OUTPUT_ARCH( "riscv" )
+ENTRY(_start)
+
+MEMORY {
+  ROM  (rwx) : ORIGIN = 0x00000000, LENGTH = 512K
+  RAM  (rwx) : ORIGIN = 0x20000000, LENGTH = 16K
+  TCM  (rwx) : ORIGIN = 0xF0000000, LENGTH = 32K
+}
+
+REGION_ALIAS("REGION_TEXT",   RAM );
+REGION_ALIAS("REGION_RODATA", RAM );
+REGION_ALIAS("REGION_DATA",   RAM );
+REGION_ALIAS("REGION_BSS",    RAM );
+REGION_ALIAS("REGION_STACK",  RAM );
+REGION_ALIAS("REGION_TCM",    TCM );
+
+STACK_SIZE = 2048;
+
+INCLUDE "k1921vg5t_common.lds"

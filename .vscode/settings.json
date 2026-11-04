@@ -1,0 +1,12 @@
+{
+  "cmake.configureOnOpen": true,
+  "cmake.generator": "Ninja",
+  "cmake.configureSettings": {
+    "CMAKE_TOOLCHAIN_FILE": "${workspaceFolder}/cmake/riscv-none-elf.cmake",
+    "CMAKE_BUILD_TYPE": "Release",
+    "USE_BOOTLOADER": "OFF"
+  },
+  "files.associations": {
+    "*.ld": "linkerscript"
+  }
+}

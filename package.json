@@ -1,0 +1,30 @@
+{
+  "name": "k1921vg5t-am32",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build tools for the K1921VG5T AM32 port",
+  "scripts": {
+    "postinstall": "xpm install",
+    "configure": "xpm run configure",
+    "configure:debug": "xpm run configure:debug",
+    "build": "xpm run build",
+    "build:debug": "xpm run build:debug"
+  },
+  "devDependencies": {
+    "xpm": "0.23.3"
+  },
+  "xpack": {
+    "minimumXpmRequired": "0.16.3",
+    "devDependencies": {
+      "@xpack-dev-tools/riscv-none-elf-gcc": "14.2.0-3.1",
+      "@xpack-dev-tools/cmake": "3.31.9-1.1",
+      "@xpack-dev-tools/ninja-build": "1.13.1-1.1"
+    },
+    "actions": {
+      "configure": "cmake -S . -B build-xpack -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/riscv-none-elf.cmake -DCMAKE_BUILD_TYPE=Release -DUSE_BOOTLOADER=OFF",
+      "configure:debug": "cmake -S . -B build-debug -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/riscv-none-elf.cmake -DCMAKE_BUILD_TYPE=Debug -DUSE_BOOTLOADER=OFF -DVG5T_DEBUG_NO_RESET=OFF",
+      "build": "cmake --build build-xpack",
+      "build:debug": "cmake --build build-debug"
+    }
+  }
+}
